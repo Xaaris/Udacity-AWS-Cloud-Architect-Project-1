@@ -1,0 +1,14 @@
+1. Minimum RTO for a single AZ outage
+    The minimum RTO for a single AZ outage is negligible, as we are using a Multi-AZ setup which will switch over to the back-up-AZ automatically.
+
+2. Minimum RTO for a single region outage
+    The minimum RTO for a single region outage could be set to around 30min if the company has staff on call 24/7.
+    All that needs to be done by the staff is log in and switch the master node to the secondary DB.
+    This process may take a few minutes.
+
+3. Minimum RPO for a single AZ outage
+    As the DB will automatically switch over to a second AZ in case the first one fails, we should not lose any data in this case.
+
+4. Minimum RPO for a single region outage
+    Even in this case we will not lose a lot of data as the data is more or less instantly replicated to the secondary region.
+    If we manage to switch the DB over to the secondary DB, only the data written in the meantime is lost.
