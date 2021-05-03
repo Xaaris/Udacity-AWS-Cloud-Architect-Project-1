@@ -1,7 +1,7 @@
-<html>
+<html lang="en">
   <style>
     body {
-      background-image: url('winter.jpg');
+      background-image: url('summer.jpg');
     }
     div#time {
       font-size: 65px;
@@ -20,9 +20,9 @@
     <div align="center" id='time'></div>
 
     <script type="text/javascript">
-      var date = new Date();
-      var dateString = date.toDateString();
-      var time = date.toLocaleTimeString();
+      const date = new Date();
+      const dateString = date.toDateString();
+      const time = date.toLocaleTimeString();
       document.getElementById('time').innerHTML = dateString + ' ' + time;
     </script>
   </body>
