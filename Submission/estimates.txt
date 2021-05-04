@@ -10,5 +10,6 @@
     As the DB will automatically switch over to a second AZ in case the first one fails, we should not lose any data in this case.
 
 4. Minimum RPO for a single region outage
-    Even in this case we will not lose a lot of data as the data is more or less instantly replicated to the secondary region.
-    If we manage to switch the DB over to the secondary DB, only the data written in the meantime is lost.
+    Even in this case we will not lose a lot of data as the data is replicated to the secondary region.
+    One should keep in mind that this replication is asynchronous and there might be some replication-lag due to high network latency or high amount of traffic that is being replicated.
+    This might lead to some amount of data being lost.
